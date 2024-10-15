@@ -1,0 +1,12 @@
+name: Trigger on Workflow Run Completed
+
+on:
+  check_run:
+    types:
+      - "completed"
+jobs:
+  run_after_workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Workflow Run Completed
+        run: echo "A previous workflow has completed!"
